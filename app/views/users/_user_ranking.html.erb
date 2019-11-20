@@ -1,0 +1,29 @@
+<div class="p-4 text-center">
+
+    <div class="flex items-center justify-around">
+      <div class="flex-initial text-gray-700 text-center">
+    <a href="<%= user_path(user) %>">
+        <%= gravatar_small_for(user) %>
+    </a>
+  </div>
+  <div class="flex-initial text-gray-700 text-center px-4 py-2 m-2 flex flex-col">
+    <a href="<%= user_path(user) %>">
+        <span class="font-semibold text-lg text-gray-700"><%= user.username %></span>
+    </a>
+        <div class="italic text-sm text-gray-600">Joined <%= time_ago_in_words(user.created_at) %> ago</div>
+  
+    <span class="text-gray-600 text-sm">
+    <% if user.posts.any? %>
+        <%= pluralize(user.posts.count, "post") %>
+    <% end %>     
+    </span>
+
+  </div>
+  </div>
+
+
+
+
+ 
+
+</div>

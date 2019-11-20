@@ -1,0 +1,23 @@
+<%= form_with(model: post, local: true) do |form| %>
+
+  <%= render 'shared/error_messages', object: form.object %>
+
+  <div class="mb-6">
+    <%= form.label :title, class:"label" %>
+    <%= form.text_field :title, class:"input"  %>
+  </div>
+
+  <div class="mb-6 text">
+    <%= form.label "Text", class: "label" %>
+    <%= form.text_area :body, class: "input"  %>
+  </div>
+
+  <div class="checkboxes mb-8">
+    <%= form.collection_select(:fach_ids, Fach.all, :id, :name) %>
+  </div>
+
+
+  <div class="mb-6">
+    <%= form.submit class: "btn btn-purple" %>
+  </div>
+<% end %>

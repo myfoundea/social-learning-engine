@@ -1,0 +1,13 @@
+<%= content_for :primary_content do %>
+  <div class="lg:p-10 pt-10 pb-10 px-4 bg-white shadow border border-gray-300 rounded-sm">
+    <h1 class="text-xl font-normal mb-6">Create a post</h1>
+
+    <%= render 'form', post: @post %>
+  </div>
+<% end %>
+
+<% content_for :secondary_content do %>
+  <%= render 'guidelines' %>
+<% end %>
+
+<%= render "basic_layout" %>

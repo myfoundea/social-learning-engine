@@ -1,2 +1,16 @@
 <h1 class="semibold text-2xl">Welcome to Kickoff!</h1>
 <p class="lead">Use this starting point as a way to quickly set up a new project by generating files, installing gems, and more.</p>
+
+<% content_for :primary_content do %>
+
+    <p><%= link_to 'All users', "/users" %></p>
+    <p><%= link_to 'All posts', "/posts" %></p>
+    
+
+<% end %>
+
+<% content_for :secondary_content do %>
+  <%= link_to 'New post', new_post_path %>
+<% end %>
+
+<%= render "basic_layout" %>

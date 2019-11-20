@@ -1,0 +1,56 @@
+<div class="flex flex-wrap">
+
+<div class="w-full md:w-1/4 flex items-center justify-center">
+    <div class="flex flex-col">
+        <%= gravatar_for(user) %>
+        <%= render 'users/follow_form' if user_signed_in? %>
+        <%= link_to "+ Follow", new_user_registration_path(flash_notice: "please keep in mind ..."), class:"btn btn-purple block text-center mt-4" if !user_signed_in? %>
+        <% if current_user == user %>
+            <%= link_to edit_user_registration_url, class: "btn btn-default hover:no-underline mt-4 flex items-center text-gray-500
+text-gray-500 hover:text-gray-600" do %>
+                <%= render_svg 'icons/edit', title: "Edit", styles: "fill-current icon-sm" %> 
+                <span class="ml-2 text-base">Edit</span>
+            <% end %>
+        <% end %>   
+
+
+    </div>
+</div>
+
+<%-# user details -%>
+<div class="w-full md:w-3/4 md:pl-8">
+
+    <div class="flex flex-col justify-between">
+        <div class="font-semibold text-4xl">
+            <%= user.username %> <span class="text-3xl text-gray-500 ml-4">
+            <span class="ml-4 text-gray-600 p-2 text-xl bg-gray-200 rounded-full">
+                <%= user.points %> <%= "point".pluralize(user.points) %>
+            </span>
+        </div>
+        <div class="italic text-gray-600">
+            Joined <%= time_ago_in_words(user.created_at) %> ago
+        </div>
+    </div>
+
+    <%-# user stats -%>
+    <div class="flex mt-12 justify-between">
+        <div class="flex flex-col items-center">
+            <span class="text-gray-500 font-bold">Posts</span>
+            <span class="text-gray-700 text-lg font-semibold"><%= user.posts.count %></span>
+        </div>
+        <div class="flex flex-col items-center">
+            <span class="text-gray-500 font-bold">Likes</span>
+            <span class="text-gray-700 text-lg font-semibold"><%= user.favorites.count %></span>
+        </div>
+        <div class="flex flex-col items-center">
+            <span class="text-gray-500 font-bold">Followers</span>
+            <span class="text-gray-700 text-lg font-semibold"><%= @user.followers.count %></span>
+        </div>    
+        <div class="flex flex-col items-center">
+            <span class="text-gray-500 font-bold">Following</span>
+            <span class="text-gray-700 text-lg font-semibold"><%= @user.following.count %></span>
+        </div>       
+    </div>
+</div>
+
+</div>

@@ -1,0 +1,11 @@
+<% unless (current_user == @user) %>
+  <% if current_user.following?(@user) %>
+  <div class="my-2 w-32 mt-6 mx-auto text-center">
+    <%= render 'users/unfollow' %>
+    </div>
+  <% else %>
+  <div class="my-2 w-32 mt-6 mx-auto text-center">
+    <%= render 'users/follow' %>
+    </div>
+  <% end %>
+<% end %>

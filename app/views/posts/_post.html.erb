@@ -1,0 +1,26 @@
+<div class="mb-6 shadow rounded-sm overflow-hidden border border-gray-300">
+  <div class="flex items-center flex-wrap">
+
+    <div class="px-4 bg-white w-full">
+      <h2 class="flex flex-wrap items-center text-xl">
+      <%= link_to post.title, post, class:"no-underline font-semibold text-gray-800" %> 
+      </h2>
+      
+
+      <div class="text-sm text-gray-700 mb-3"><%= post.body.truncate(130) %></div>
+
+      
+    </div>
+    <div class="pl-4 bg-gray-100 w-full py-2 flex justify-between pr-3">
+      <%= link_to(post.user) do %>
+        <div class="text-gray-800 flex items-center font-semibold text-sm">
+          <%= gravatar_smallest_for(post.user) %> 
+          <span class="ml-3"><%= post.user.username %></span>
+          <span class="ml-4 text-gray-600"><%= post.fans.size %> <%= "like".pluralize(post.fans.size) %></span>
+      </div>
+      <% end %>
+      <%= render 'posts/actions', post: post %>
+    </div>
+
+  </div>
+</div>

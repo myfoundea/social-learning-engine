@@ -2,7 +2,14 @@
 @tailwind components;
 
 // Custom SCSS
+@import "components/icons";
+@import "components/animations";
+@import "components/base";
 @import "components/buttons";
+@import "components/cards";
 @import "components/forms";
+@import "components/posts";
+@import "components/w3tabs";
+
 
 @tailwind utilities;

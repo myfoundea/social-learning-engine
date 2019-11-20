@@ -1,0 +1,23 @@
+<div class="bg-white border-b border-r border-l shadow border border-gray-300 mb-8">
+  <div class="flex items-center my-4">
+    <div class="ml-4 mr-8">
+      <a href="<%= user_path(user) %>">
+          <%= gravatar_small_for(user) %>
+      </a>
+    </div>
+    <div class="">
+      <a href="<%= user_path(user) %>">
+          <span class="font-semibold text-lg"><%= user.username %></span>
+      </a>
+      <%= render 'users/user_points', user: user  %>
+      <div class="italic text-sm text-gray-600 mt-4">
+        Joined <%= time_ago_in_words(user.created_at) %> ago
+        <div class="not-italic mt-2 text-gray-700 text-base">
+            <span class="text-gray-600 mt-4"><%= pluralize(user.posts.count, "post") %></span>, 
+            <span class="text-gray-600 mt-4"><%= pluralize(user.followers.count, "follower") %></span>, 
+            <span class="text-gray-600 mt-4"><%= pluralize(user.following.count, "following") %></span>
+        </div> 
+    </div> 
+    </div>
+  </div>
+</div>

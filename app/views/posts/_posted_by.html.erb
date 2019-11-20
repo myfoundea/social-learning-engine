@@ -1,0 +1,4 @@
+<p class="text-gray-600 font-normal text-sm inline-block">
+    Posted by <%= link_to "#{post.user.username}", user_path(post.user), class:"text-gray-600 hover:text-gray-800 underline" %> 
+    <%= time_ago_in_words(post.created_at) %> ago
+</p>

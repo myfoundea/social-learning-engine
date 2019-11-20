@@ -1,0 +1,31 @@
+body {
+    @apply font-sans text-base leading-normal text-gray-800;
+}
+
+a {
+    @apply text-blue-600 no-underline;
+
+    &:hover {
+        @apply no-underline;
+    }
+}
+
+a:active {
+    color: inherit;
+}
+
+.heading {
+    @apply font-sans font-medium text-gray-800;
+}
+
+h1 {
+    @apply text-gray-800 text-4xl font-semibold mt-2 mb-4 leading-tight;
+}
+
+h2 {
+    @apply text-gray-800 text-2xl font-semibold mt-2 mb-2 leading-tight;
+}
+
+h3 {
+    @apply text-gray-800 text-xl font-semibold mt-2 mb-2 leading-tight;
+}

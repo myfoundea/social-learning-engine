@@ -1,0 +1,18 @@
+<div class="p-4 text-center">
+    <a href="<%= user_path(user) %>" class="mb-4 block">
+        <%= gravatar_for(user) %>
+    </a>
+    <a href="<%= user_path(user) %>">
+        <span class="font-semibold text-lg"><%= user.username %></span>
+    </a>
+    <span class="ml-2 text-gray-600 p-2 text-base bg-gray-200 rounded-full">
+        <%= user.points %> <%= "point".pluralize(user.points) %>
+    </span>
+
+    <div class="italic text-sm text-gray-600 mt-4">Joined <%= time_ago_in_words(user.created_at) %> ago</div>
+
+    <% if user.posts.any? %>
+        <span class="text-gray-600 mt-4 block"><%= pluralize(user.posts.count, "post") %></span>
+    <% end %>   
+
+</div>

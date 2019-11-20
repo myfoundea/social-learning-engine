@@ -1,0 +1,17 @@
+<% content_for :primary_content do %>
+  <% if @posts.exists? %>
+    <%= render @posts %>
+  <% else %>
+    <div class="p-10 text-center">
+      <%= render_svg 'icons/empty' %>
+      <p class="mb-4">Wow such empty... </p>
+      <%= link_to 'Create a new post', new_post_path, class: "btn btn-purple btn-small" %>
+    </div>
+  <% end %>
+<% end %>
+
+<% content_for :secondary_content do %>
+  <%= link_to 'New post', new_post_path %>
+<% end %>
+
+<%= render "basic_layout" %>
