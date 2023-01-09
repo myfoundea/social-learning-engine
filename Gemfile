@@ -60,4 +60,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'friendly_id', '~> 5.3'
 gem 'sidekiq', '~> 6.0', '>= 6.0.3'
-gem 'inline_svg', '~> 1.6'
+gem 'inline_svg', '~> 1.7'
